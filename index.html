@@ -1,1 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Proyectos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Estilos del encabezado y el menú */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos de la sección de contenido */
+        .container {
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* Estilos del enlace*/
+        .project-link {
+            display: none;
+            margin-top: 30px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .project-link:hover {
+            background-color: #0056b3;
+        }
+
+        /* Animación para el enlace */
+        .show-link {
+            display: inline-block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Estilos para el iframe */
+        #project-iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+            display: none;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con título -->
+    <header>
+        <h1>Portafolio de Proyectos</h1>
+    </header>
+
+    <!-- Menú de navegación -->
+    <nav>
+        <a href="#" onclick="showProject('pinterest')">Clon de Pinterest</a>
+        <a href="#">Proyecto 2</a>
+        <a href="#">Proyecto 3</a>
+        <a href="#" onclick="showContact()">Contacto</a>
+    </nav>
+
+    <!-- Contenedor de contenido -->
+    <div class="container">
+        <h2 id="prompt-text">Selecciona un proyecto para ver más detalles</h2>
+        <!-- Enlace que se mostrará al hacer clic -->
+        <a id="project-link" class="project-link" href="" target="_blank">Ir al Proyecto</a>
+        <!-- Muestra el proyecto Uwu -->
+        <iframe id="project-iframe"></iframe>
+    </div>
+
+    <!-- JavaScript-->
+    <script>
+        function showProject(project) {
+            const linkElement = document.getElementById('project-link');
+            const iframeElement = document.getElementById('project-iframe');
+            const promptText = document.getElementById('prompt-text');
+
+            if (project === 'pinterest') {
+                iframeElement.src = "https://dolcevita-bash.github.io/PinterestClon/";
+                iframeElement.style.display = 'block';
+
+                promptText.style.display = 'none';
+                linkElement.style.display = 'none';
+            }
+        }
+
+        function showContact() {
+            alert("YEIMI JAZMIN AVILA MORENO");
+        }
+    </script>
+
+</body>
+</html>
 
